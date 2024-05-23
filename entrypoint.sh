@@ -16,4 +16,4 @@ if [ -z "$ARGOCD_COMMAND" ]; then
   exit 1
 fi
 
-argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" "${ARGOCD_COMMAND}"
+argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" $(echo $ARGOCD_COMMAND | sed 's/"//g')
