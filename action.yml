@@ -23,7 +23,7 @@ inputs:
   argo-sub-command:
     description: 'argo sub command to use with argocd'
     required: false
-    default: 'sync'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
