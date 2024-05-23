@@ -12,10 +12,6 @@ inputs:
     description: 'argocd server endpoint'
     required: false
     default: ''
-  argo-application:
-    description: 'argo application name'
-    required: false
-    default: ''
   argo-command:
     description: 'argo command to use with argocd'
     required: false
@@ -27,5 +23,4 @@ runs:
   env:
     ARGO_TOKEN: ${{ inputs.argo-token }}
     ARGO_URL: ${{ inputs.argo-url }}
-    ARGO_APPLICATION: ${{ inputs.argo-application }}
     ARGOCD_COMMAND: ${{ inputs.argo-command }}

@@ -1,17 +1,13 @@
 #!/bin/bash
 set -e
-if [ -z "$ARGO_TOKEN" ]; then
-  echo "ARGO TOKEN required but not defined."
-  exit 1
-fi
 
 if [ -z "$ARGO_URL" ]; then
   echo "ARGOCD URL are required, but none defined."
   exit 1
 fi
 
-if [ -z "$ARGO_APPLICATION" ]; then
-  echo "ARGO APPLICATION is required, but none defined."
+if [ -z "$ARGO_TOKEN" ]; then
+  echo "ARGO TOKEN required but not defined."
   exit 1
 fi
 
@@ -20,4 +16,4 @@ if [ -z "$ARGOCD_COMMAND" ]; then
   exit 1
 fi
 
-argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" "${ARGOCD_COMMAND}" "${ARGO_APPLICATION}" --plaintext
+argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" "${ARGOCD_COMMAND}"
