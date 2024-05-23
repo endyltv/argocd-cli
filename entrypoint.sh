@@ -20,9 +20,4 @@ if [ -z "$ARGOCD_COMMAND" ]; then
   exit 1
 fi
 
-if [ -z "$ARGOCD_SUB_COMMAND" ]; then
-  echo "ARGOCD SUB COMMAND is required, but none defined."
-  exit 1
-fi
-
-argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" "${ARGOCD_COMMAND}" "${ARGOCD_SUB_COMMAND}" "${ARGO_APPLICATION}" --plaintext
+argocd --server "${ARGO_URL}" --auth-token "${ARGO_TOKEN}" "${ARGOCD_COMMAND}" "${ARGO_APPLICATION}" --plaintext

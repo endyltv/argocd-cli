@@ -20,10 +20,7 @@ inputs:
     description: 'argo command to use with argocd'
     required: false
     default: 'app'
-  argo-sub-command:
-    description: 'argo sub command to use with argocd'
-    required: false
-    default: ''
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -32,4 +29,3 @@ runs:
     ARGO_URL: ${{ inputs.argo-url }}
     ARGO_APPLICATION: ${{ inputs.argo-application }}
     ARGOCD_COMMAND: ${{ inputs.argo-command }}
-    ARGOCD_SUB_COMMAND: ${{ inputs.argo-sub-command }}
